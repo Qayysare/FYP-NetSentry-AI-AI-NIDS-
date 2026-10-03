@@ -1,0 +1,5 @@
+const deviceBody = document.getElementById("device-body");
+function escapeDevice(value) { return String(value ?? "-").replace(/[&<>'"]/g, char => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", "'": "&#39;", '"': "&quot;" })[char]); }
+function renderDevices(rows, message = "No local devices have been observed during authorised monitoring yet.") { deviceBody.innerHTML = rows.map(row => `<tr><td>${escapeDevice(row.device_name)}</td><td>${escapeDevice(row.ip_address)}</td><td>${escapeDevice(row.mac_address)}</td><td>${escapeDevice(row.device_type)}</td><td><span class="status ${escapeDevice(row.status).toLowerCase()}">${escapeDevice(row.status)}</span></td><td>${row.last_activity ? new Date(row.last_activity).toLocaleString() : "-"}</td></tr>`).join("") || `<tr><td colspan="6">${escapeDevice(message)}</td></tr>`; }
+async function loadDevices() { renderDevices([], "Loading devices…"); try { renderDevices(await apiRequest("/api/devices")); } catch (error) { renderDevices([], error.message || "Device data could not be loaded."); } }
+loadDevices();

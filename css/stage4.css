@@ -1,0 +1,152 @@
+/* Stage 4 API result components reuse the existing dark dashboard palette. */
+.analysis-state
+{
+    margin:0;
+    color:var(--muted);
+    font-size:.85rem
+}
+
+.analysis-state i
+{
+    font-size:.7rem;
+    margin-right:5px
+}
+
+.analysis-state.ready i
+{
+    color:var(--blue)
+}
+
+.analysis-state.loading i
+{
+    color:var(--orange)
+}
+
+.analysis-state.completed i
+{
+    color:var(--green)
+}
+
+.analysis-state.error i
+{
+    color:var(--red)
+}
+
+.analysis-stat-grid
+{
+    margin-top:17px
+}
+
+.filename-value
+{
+    font-size:1rem!important;
+    overflow-wrap:anywhere
+}
+
+.prediction-panel
+{
+    margin-top:17px
+}
+
+.validation-panel
+{
+    margin-top:17px
+}
+
+.validation-note,
+.validation-source
+{
+    color:var(--muted);
+    font-size:.86rem;
+    line-height:1.5
+}
+
+.validation-note i
+{
+    color:var(--blue);
+    margin-right:5px
+}
+
+.validation-results
+{
+    margin-top:14px
+}
+
+.live-sensor-charts
+{
+    margin-top:17px
+}
+
+.live-activity-panel{margin-bottom:17px;border-color:#285a86}.live-activity-wrap{height:310px}.live-distribution-grid .chart-wrap{height:245px}.chart-empty{color:var(--muted);font-size:.86rem;margin:4px 0 12px}@media (max-width:760px){.live-activity-wrap{height:240px}.live-distribution-grid .chart-wrap{height:220px}}
+.sensor-hero{display:flex;justify-content:space-between;gap:20px;align-items:center;margin-bottom:18px}.sensor-title{display:flex;gap:14px;align-items:center}.sensor-title h1{margin:0}.sensor-title p{margin:4px 0;color:var(--muted)}.sensor-icon{display:grid;place-items:center;width:48px;height:48px;border-radius:12px;background:#16395b;color:#58b6ff;box-shadow:0 0 20px #42a5f522;font-size:1.25rem}.sensor-state{text-align:right}.sensor-state strong{display:block;color:#75e3b1}.sensor-state small{display:block;color:var(--muted);margin:5px 0}.sensor-kpis .stat-card>i{color:#58b6ff;font-size:1rem}.sensor-bottom-grid{display:grid;grid-template-columns:minmax(280px,35%) minmax(0,65%);gap:17px}.sensor-bottom-grid .chart-wrap{height:280px}@media(max-width:760px){.sensor-hero{align-items:flex-start;flex-direction:column}.sensor-state{text-align:left}.sensor-bottom-grid{grid-template-columns:1fr}}
+.sensor-hero{display:flex;justify-content:space-between;gap:20px;align-items:center;margin-bottom:18px}.sensor-title{display:flex;gap:14px;align-items:center}.sensor-title h1{margin:0}.sensor-title p{margin:4px 0;color:var(--muted)}.sensor-icon{display:grid;place-items:center;width:48px;height:48px;border-radius:12px;background:#16395b;color:#58b6ff;box-shadow:0 0 20px #42a5f522;font-size:1.25rem}.sensor-state{text-align:right}.sensor-state strong{display:block;color:#75e3b1}.sensor-state small{display:block;color:var(--muted);margin:5px 0}.sensor-state button,.toolbar button[id^="stop-"]{min-height:40px;padding:10px 13px;border:1px solid #9d4452;background:#582a35;color:#ffd6da;border-radius:7px;cursor:pointer;font:600 .84rem Inter}.sensor-state button:hover,.toolbar button[id^="stop-"]:hover{background:#70323f;border-color:#d66475}.sensor-state button:disabled,.toolbar button[id^="stop-"]:disabled{opacity:.55;cursor:not-allowed}.sensor-kpis .stat-card>i{color:#58b6ff;font-size:1rem}.sensor-bottom-grid{display:grid;grid-template-columns:minmax(280px,35%) minmax(0,65%);gap:17px}.sensor-bottom-grid .chart-wrap{height:280px}@media(max-width:760px){.sensor-hero{align-items:flex-start;flex-direction:column}.sensor-state{text-align:left}.sensor-bottom-grid{grid-template-columns:1fr}}
+
+.wrap-cell
+{
+    white-space:normal;
+    min-width:220px;
+    line-height:1.45
+}
+
+.classification
+{
+    display:inline-block;
+    font-size:.74rem;
+    font-weight:600;
+    border-radius:12px;
+    padding:5px 8px;
+    color:#cde7ff;
+    background:#1d3451
+}
+
+.classification.benign
+{
+    color:#a9ebcf;
+    background:#1d4f3c
+}
+
+.classification.ddos
+{
+    color:#ffb0b8;
+    background:#5a2732
+}
+.classification.ftp-patator,
+.classification.ssh-patator
+{
+    color:#ffcc84;
+    background:#5a3f1f
+}
+
+.classification.portscan
+{
+    color:#ffe38f;
+    background:#5a5121
+}
+
+.severity.informational
+{
+    color:#a8d8ff;
+    background:#1d3451
+}
+
+.status.new
+{
+    color:#a8d8ff;
+    background:#1d3451
+}
+
+.status.investigating
+{
+    color:#ffcd81;
+    background:#5a3f1f
+}
+.success-notice
+{
+    background:#15362c;
+    color:#c9f2df
+}
+.action-button:disabled
+{
+    opacity:.6;
+    cursor:not-allowed
+}

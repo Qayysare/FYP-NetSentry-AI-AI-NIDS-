@@ -1,0 +1,157 @@
+{
+  "training_timestamp_utc": "2026-09-02T12:16:02.420956+00:00",
+  "selected_model": "Random Forest",
+  "selection_rule": "Highest validation macro F1; weighted F1 used only as a tie-breaker.",
+  "selected_model_parameters": {
+    "bootstrap": true,
+    "ccp_alpha": 0.0,
+    "class_weight": "balanced",
+    "criterion": "gini",
+    "max_depth": 24,
+    "max_features": "sqrt",
+    "max_leaf_nodes": null,
+    "max_samples": null,
+    "min_impurity_decrease": 0.0,
+    "min_samples_leaf": 2,
+    "min_samples_split": 2,
+    "min_weight_fraction_leaf": 0.0,
+    "monotonic_cst": null,
+    "n_estimators": 80,
+    "n_jobs": -1,
+    "oob_score": false,
+    "random_state": 42,
+    "verbose": 0,
+    "warm_start": false
+  },
+  "feature_order": [
+    "destination_port",
+    "flow_duration",
+    "total_forward_packets",
+    "total_backward_packets",
+    "total_forward_bytes",
+    "total_backward_bytes",
+    "forward_packet_length_mean",
+    "forward_packet_length_std",
+    "forward_packet_length_max",
+    "forward_packet_length_min",
+    "backward_packet_length_mean",
+    "backward_packet_length_std",
+    "backward_packet_length_max",
+    "backward_packet_length_min",
+    "flow_bytes_per_second",
+    "flow_packets_per_second",
+    "flow_iat_mean",
+    "flow_iat_std",
+    "flow_iat_max",
+    "flow_iat_min"
+  ],
+  "class_labels": [
+    "BENIGN",
+    "DDoS",
+    "FTP-Patator",
+    "PortScan",
+    "SSH-Patator"
+  ],
+  "class_mapping": {
+    "BENIGN": 0,
+    "DDoS": 1,
+    "FTP-Patator": 2,
+    "PortScan": 3,
+    "SSH-Patator": 4
+  },
+  "sklearn_version": "1.9.0",
+  "validation_metrics": {
+    "Decision Tree": {
+      "model": "Decision Tree",
+      "accuracy": 0.9986568867155664,
+      "macro_precision": 0.9922001644066757,
+      "macro_recall": 0.9760646362062504,
+      "macro_f1": 0.9837334006350706,
+      "weighted_precision": 0.9986404114879027,
+      "weighted_recall": 0.9986568867155664,
+      "weighted_f1": 0.9986366902288426,
+      "training_seconds": 12.241979599988554,
+      "validation_prediction_seconds": 0.03582180000375956
+    },
+    "Random Forest": {
+      "model": "Random Forest",
+      "accuracy": 0.9993871230643847,
+      "macro_precision": 0.9928752179262214,
+      "macro_recall": 0.9914668531943038,
+      "macro_f1": 0.9921671902225446,
+      "weighted_precision": 0.9993854385861357,
+      "weighted_recall": 0.9993871230643847,
+      "weighted_f1": 0.9993861625848584,
+      "training_seconds": 41.34643109998433,
+      "validation_prediction_seconds": 0.5274376999877859
+    },
+    "Logistic Regression": {
+      "model": "Logistic Regression",
+      "accuracy": 0.8645541972290138,
+      "macro_precision": 0.6428317348528656,
+      "macro_recall": 0.9509327737885702,
+      "macro_f1": 0.7085210234372216,
+      "weighted_precision": 0.9195729025000355,
+      "weighted_recall": 0.8645541972290138,
+      "weighted_f1": 0.8804657521819443,
+      "training_seconds": 61.85870569999679,
+      "validation_prediction_seconds": 0.059109199995873496
+    }
+  },
+  "final_test_metrics": {
+    "accuracy": 0.9990712707849073,
+    "macro_precision": 0.9912379101450404,
+    "macro_recall": 0.9857945855129815,
+    "macro_f1": 0.9884766519299456,
+    "weighted_precision": 0.9990629714171038,
+    "weighted_recall": 0.9990712707849073,
+    "weighted_f1": 0.9990657175074209
+  },
+  "preprocessing_metadata": {
+    "source_files": [
+      "Tuesday-WorkingHours.pcap_ISCX.csv",
+      "Friday-WorkingHours-Afternoon-PortScan.pcap_ISCX.csv",
+      "Friday-WorkingHours-Afternoon-DDos.pcap_ISCX.csv"
+    ],
+    "source_hashes": {
+      "Tuesday-WorkingHours.pcap_ISCX.csv": "52b8692ae8c7d2ed04671fe2b98335693c0a92c7ab157d8c8b534d6523080851",
+      "Friday-WorkingHours-Afternoon-PortScan.pcap_ISCX.csv": "ca1824c51bfbb7b3c72290a11be04366ba8815878c6a1cc5c44cb1cee269e99b",
+      "Friday-WorkingHours-Afternoon-DDos.pcap_ISCX.csv": "6ff1580f5f81c0ae28a26f7631721018577f5f7c5e0feac28b795fcfe7b411ee"
+    },
+    "source_files_unchanged": true,
+    "original_rows": 958121,
+    "invalid_rows_removed": 669,
+    "final_rows": 957452,
+    "random_state": 42,
+    "test_fraction": 0.2,
+    "duplicate_policy": "Retained; exact duplicate identities are kept in one split only.",
+    "split_strategy": "Stratified by Label and grouped by exact cleaned-row identity.",
+    "class_counts_after_cleaning": {
+      "BENIGN": 656791,
+      "DDoS": 128025,
+      "FTP-Patator": 7935,
+      "PortScan": 158804,
+      "SSH-Patator": 5897
+    },
+    "train_rows": 766869,
+    "test_rows": 190583,
+    "train_class_distribution": {
+      "BENIGN": 526455,
+      "DDoS": 102422,
+      "FTP-Patator": 6561,
+      "PortScan": 126865,
+      "SSH-Patator": 4566
+    },
+    "test_class_distribution": {
+      "BENIGN": 130336,
+      "DDoS": 25603,
+      "FTP-Patator": 1374,
+      "PortScan": 31939,
+      "SSH-Patator": 1331
+    },
+    "exact_row_overlap": 0,
+    "model_trained": false
+  },
+  "reload_test_passed": true,
+  "model_trained_on_test_data": false
+}

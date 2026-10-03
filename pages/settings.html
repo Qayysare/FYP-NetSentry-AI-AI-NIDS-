@@ -1,0 +1,85 @@
+﻿<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <title>Settings | NetSentry AI</title>
+        
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+        <link rel="stylesheet" href="../css/style.css">
+        <link rel="stylesheet" href="../css/dashboard.css">
+        <link rel="stylesheet" href="../css/responsive.css">
+    
+    </head>
+    <body data-root="../">
+        <div id="app-sidebar"></div>
+        <main class="content">
+            <header id="app-header"></header>
+            <section class="page-heading">
+                <div><p class="eyebrow">FRONTEND PREFERENCES</p>
+                    <h1>Settings</h1><p>These controls are stored only in the current browser session for Stage 1.</p></div>
+                    <span class="demo-badge">
+                        <i class="fa-solid fa-sliders"> </i> Frontend-only
+                    </span>
+            </section>
+            
+            <section class="page-grid">
+                <article class="info-card settings-group"><h2>System settings</h2>
+                            <div class="settings-field">
+                                <div><strong>System name</strong>
+                                    <p>Displayed in the dashboard header.</p>
+                                    </div>
+                                <input value="NetSentry AI">
+                    </div>
+                    <div class="settings-field">
+                                <div><strong>Refresh interval</strong>
+                                    <p>Future monitoring refresh setting.</p>
+                                </div>
+                                <select>
+                                    <option>30 seconds</option>
+                                    <option>60 seconds</option>
+                                </select>
+                    </div>
+                </article>
+                            
+                            <article class="info-card settings-group">
+                                <h2>Notification settings</h2>
+                                <div class="settings-field">
+                                    <div><strong>Critical alerts</strong>
+                                        <p>Show frontend alert notifications.</p>
+                                    </div><input class="switch" type="checkbox" checked>
+                                </div>
+                                <div class="settings-field">
+                                    <div><strong>Daily summary</strong>
+                                        <p>Planned for later backend integration.</p>
+                                    </div>
+                                    <input class="switch" type="checkbox">
+                                </div>
+                            </article>
+                            
+                            <article class="info-card settings-group">
+                                <h2>Dashboard preferences</h2>
+                                <div class="settings-field">
+                                    <div><strong>Compact tables</strong>
+                                        <p>Use denser table row spacing.</p>
+                                    </div><input class="switch" type="checkbox">
+                                </div>
+                                <div class="settings-field"><div><strong>Show demo labels</strong><p>Keep simulated data clearly marked.</p></div><input class="switch" type="checkbox" checked></div>
+                            </article>
+                                    
+                            <article class="info-card settings-group"><h2>Detection settings</h2><div class="settings-field">
+                                         <div><strong>Detection mode</strong>
+                                                <p>Placeholder until AI model integration.</p>
+                                        </div>
+                                            <select><option>Demo mode</option></select></div>
+                                        <div class="settings-field"><div>
+                                            <strong>Auto-response</strong>
+                                            <p>No real automated blocking is available.</p></div>
+                                            <input class="switch" type="checkbox" disabled>
+                                        </div>
+                            </article>
+            </section>
+        </main><script src="../js/app.js"></script>
+    </body>
+</html>

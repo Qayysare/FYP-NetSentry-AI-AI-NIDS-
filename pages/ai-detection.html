@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>AI Detection | NetSentry AI</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/dashboard.css">
+  <link rel="stylesheet" href="../css/stage4.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body data-root="../">
+  <div id="app-sidebar"></div>
+  <main class="content">
+    <header id="app-header"></header>
+    <section class="page-heading">
+      <div><p class="eyebrow">AI THREAT ANALYSIS</p><h1>AI Detection</h1><p>Analyse an uploaded PCAP using the current NetSentry AI flow-classification model.</p></div>
+      <span class="demo-badge"><i class="fa-solid fa-circle-info"></i> Five trained classes</span>
+    </section>
+    <section class="panel">
+      <div class="panel-heading"><div><h2>PCAP analysis</h2><p>Select a capture file for backend-side packet parsing and AI flow analysis.</p></div></div>
+      <form id="ai-analysis-form" class="toolbar" novalidate><input id="capture-file" type="file" accept=".pcap,.pcapng" required aria-describedby="analysis-message"><button id="analyze-button" class="action-button" type="submit"><i class="fa-solid fa-magnifying-glass-chart"></i> Analyse PCAP</button></form>
+      <p id="analysis-state" class="analysis-state ready"><i class="fa-solid fa-circle"></i> Ready to analyse a .pcap or .pcapng file.</p><p id="analysis-message" class="form-message" aria-live="polite"></p>
+    </section>
+    <section class="panel validation-panel">
+      <div class="panel-heading"><div><p class="eyebrow">DATASET VALIDATION &middot; NOT LIVE TRAFFIC</p><h2>Controlled Model Validation</h2><p>Held-out CIC-IDS2017 Test Samples</p></div><span class="demo-badge">DATASET VALIDATION</span></div>
+      <p class="validation-note"><i class="fa-solid fa-circle-info"></i> These results come from held-out dataset feature rows and are not detections from the uploaded PCAP or live network traffic.</p>
+      <div class="toolbar"><button id="run-validation-button" class="action-button" type="button"><i class="fa-solid fa-flask"></i> Run Validation</button><p id="validation-message" class="form-message" aria-live="polite"></p></div>
+      <div id="validation-results" class="table-wrap validation-results" hidden>
+        <p class="validation-source">Validation Source: Held-out CIC-IDS2017 test set</p>
+        <table><thead><tr><th>Class</th><th>Expected</th><th>Predicted</th><th>Confidence</th><th>Severity</th><th>Priority</th><th>Recommended Action</th><th>Representative Result</th><th>Fixed 5-Sample Result</th></tr></thead><tbody id="validation-results-body"></tbody></table>
+      </div>
+    </section>
+    <section id="analysis-results" hidden>
+      <section class="stat-grid analysis-stat-grid">
+        <article class="stat-card"><p>Capture file</p><h2 id="result-filename" class="filename-value">-</h2><small>Analysed capture</small></article>
+        <article class="stat-card"><p>Packets / flows</p><h2><span id="result-packets">0</span> / <span id="result-flows">0</span></h2><small>Completed bidirectional flows</small></article>
+        <article class="stat-card"><p>Predictions</p><h2 id="result-predictions">0</h2><small id="result-malicious">0 malicious flows</small></article>
+        <article class="stat-card"><p>Requires attention</p><h2 id="result-attention">0</h2><small id="result-storage">0 stored threats</small></article>
+      </section>
+      <div id="benign-message" class="notice success-notice" hidden><i class="fa-solid fa-circle-check"></i> No malicious flows were detected in this capture. This result is limited to the model's five trained classes.</div>
+      <section class="page-grid">
+        <article class="panel"><div class="panel-heading"><div><h2>Classification distribution</h2><p>Completed-flow classifications returned by the model</p></div></div><div id="class-summary" class="result-list"></div></article>
+        <article class="panel"><div class="panel-heading"><div><h2>Severity distribution</h2><p>Assigned by the separate policy engine</p></div></div><div id="severity-summary" class="result-list"></div></article>
+      </section>
+      <section class="panel prediction-panel"><div class="panel-heading"><div><h2>Flow predictions</h2><p>Confidence is the model probability; severity and priority are policy results.</p></div></div><div class="table-wrap"><table><thead><tr><th>Source</th><th>Destination</th><th>Protocol</th><th>Classification</th><th>Confidence</th><th>Severity</th><th>Priority</th><th>Recommended Action</th></tr></thead><tbody id="predictions-body"></tbody></table></div></section>
+    </section>
+  </main>
+  <script src="../js/app.js"></script><script src="../js/ai-detection.js"></script>
+</body>
+</html>

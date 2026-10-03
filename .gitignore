@@ -1,0 +1,33 @@
+# Environment variables
+.env
+*.env
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# VS Code
+.vscode/
+
+# Packet capture files
+*.pcap
+*.pcapng
+
+# Dataset / generated data
+datasets/
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Local Wireshark files
+Wireshark/
+
+# Local PCAP test directory
+pcap/
