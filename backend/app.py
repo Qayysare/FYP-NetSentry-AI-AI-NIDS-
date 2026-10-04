@@ -72,9 +72,13 @@ def create_app():
 
     return app
 
+# Flask application instance for WSGI/serverless deployment (e.g. Vercel)
+app = create_app()
 
 # MUST BE DOUBLE UNDERSCORES: __name__ and "__main__"
 if __name__ == "__main__":
+
+
     print("Starting AI-NIDS on http://127.0.0.1:5000", flush=True)
     application = create_app()
     # The factory remains safe for imports and tests. In debug mode Werkzeug
