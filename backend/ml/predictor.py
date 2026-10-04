@@ -25,7 +25,7 @@ class FlowPredictor:
     def __init__(self, model_path: Path | None = None, schema_path: Path | None = None, metadata_path: Path | None = None):
         project_root = Path(__file__).resolve().parents[2]
         self.model_path = model_path or project_root / "backend" / "ml" / "models" / "intrusion_model.joblib"
-        self.schema_path = schema_path or project_root / "datasets" / "processed" / "feature_schema.json"
+        self.schema_path = schema_path or Path(__file__).resolve().parent / "artifacts" / "feature_schema.json"
         self.metadata_path = metadata_path or project_root / "backend" / "ml" / "results" / "model_metadata.json"
         self.feature_order = self._load_and_validate_schema()
         self.model = self._load_and_validate_model()

@@ -1,0 +1,131 @@
+{
+  "version": "1.0",
+  "runtime_feature_order": [
+    "destination_port",
+    "flow_duration",
+    "total_forward_packets",
+    "total_backward_packets",
+    "total_forward_bytes",
+    "total_backward_bytes",
+    "forward_packet_length_mean",
+    "forward_packet_length_std",
+    "forward_packet_length_max",
+    "forward_packet_length_min",
+    "backward_packet_length_mean",
+    "backward_packet_length_std",
+    "backward_packet_length_max",
+    "backward_packet_length_min",
+    "flow_bytes_per_second",
+    "flow_packets_per_second",
+    "flow_iat_mean",
+    "flow_iat_std",
+    "flow_iat_max",
+    "flow_iat_min"
+  ],
+  "mapping": [
+    {
+      "cic_column": "Destination Port",
+      "runtime_field": "destination_port",
+      "conversion": null
+    },
+    {
+      "cic_column": "Flow Duration",
+      "runtime_field": "flow_duration",
+      "conversion": "microseconds_to_seconds"
+    },
+    {
+      "cic_column": "Total Fwd Packets",
+      "runtime_field": "total_forward_packets",
+      "conversion": null
+    },
+    {
+      "cic_column": "Total Backward Packets",
+      "runtime_field": "total_backward_packets",
+      "conversion": null
+    },
+    {
+      "cic_column": "Total Length of Fwd Packets",
+      "runtime_field": "total_forward_bytes",
+      "conversion": null
+    },
+    {
+      "cic_column": "Total Length of Bwd Packets",
+      "runtime_field": "total_backward_bytes",
+      "conversion": null
+    },
+    {
+      "cic_column": "Fwd Packet Length Mean",
+      "runtime_field": "forward_packet_length_mean",
+      "conversion": null
+    },
+    {
+      "cic_column": "Fwd Packet Length Std",
+      "runtime_field": "forward_packet_length_std",
+      "conversion": null
+    },
+    {
+      "cic_column": "Fwd Packet Length Max",
+      "runtime_field": "forward_packet_length_max",
+      "conversion": null
+    },
+    {
+      "cic_column": "Fwd Packet Length Min",
+      "runtime_field": "forward_packet_length_min",
+      "conversion": null
+    },
+    {
+      "cic_column": "Bwd Packet Length Mean",
+      "runtime_field": "backward_packet_length_mean",
+      "conversion": null
+    },
+    {
+      "cic_column": "Bwd Packet Length Std",
+      "runtime_field": "backward_packet_length_std",
+      "conversion": null
+    },
+    {
+      "cic_column": "Bwd Packet Length Max",
+      "runtime_field": "backward_packet_length_max",
+      "conversion": null
+    },
+    {
+      "cic_column": "Bwd Packet Length Min",
+      "runtime_field": "backward_packet_length_min",
+      "conversion": null
+    },
+    {
+      "cic_column": "Flow Bytes/s",
+      "runtime_field": "flow_bytes_per_second",
+      "conversion": null
+    },
+    {
+      "cic_column": "Flow Packets/s",
+      "runtime_field": "flow_packets_per_second",
+      "conversion": null
+    },
+    {
+      "cic_column": "Flow IAT Mean",
+      "runtime_field": "flow_iat_mean",
+      "conversion": "microseconds_to_seconds"
+    },
+    {
+      "cic_column": "Flow IAT Std",
+      "runtime_field": "flow_iat_std",
+      "conversion": "microseconds_to_seconds"
+    },
+    {
+      "cic_column": "Flow IAT Max",
+      "runtime_field": "flow_iat_max",
+      "conversion": "microseconds_to_seconds"
+    },
+    {
+      "cic_column": "Flow IAT Min",
+      "runtime_field": "flow_iat_min",
+      "conversion": "microseconds_to_seconds"
+    }
+  ],
+  "time_unit": "seconds",
+  "packet_length_semantics": "TCP/UDP transport payload bytes",
+  "standard_deviation": "sample",
+  "flow_timeout_seconds": 120
+}
