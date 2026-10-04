@@ -25,7 +25,12 @@ PROJECT_ROOT = Path(__file__).resolve().parent.parent
 def create_app():
     app = Flask(__name__, static_folder=None)
     app.config.from_object(Config)
-    CORS(app, supports_credentials=True)
+    
+    CORS(
+    app,
+    origins=["https://netsentry-ai-frontend.vercel.app"],
+    supports_credentials=True,
+)
 
     # Load once during application creation. Routes reuse this validated object
     # and report a clear 503 response if the model artefacts are unavailable.
@@ -77,7 +82,6 @@ app = create_app()
 
 # MUST BE DOUBLE UNDERSCORES: __name__ and "__main__"
 if __name__ == "__main__":
-
 
     print("Starting AI-NIDS on http://127.0.0.1:5000", flush=True)
     application = create_app()

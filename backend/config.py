@@ -40,6 +40,6 @@ class Config:
     AUTO_MONITORING = os.getenv("AI_NIDS_AUTO_MONITORING", "false").lower() == "true"
     MONITOR_INTERFACE = os.getenv("AI_NIDS_MONITOR_INTERFACE", "").strip()
     SESSION_COOKIE_HTTPONLY = True
-    SESSION_COOKIE_SAMESITE = "Lax"
+    SESSION_COOKIE_SAMESITE = "None"
     SESSION_COOKIE_SECURE = os.getenv("SESSION_COOKIE_SECURE", "false").lower() == "true"
     JSON_SORT_KEYS = False
