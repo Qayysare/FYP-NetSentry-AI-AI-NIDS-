@@ -21,6 +21,7 @@ class Config:
     DB_NAME = os.getenv("DB_NAME", "ai_nids")
     DB_USER = os.getenv("DB_USER", "root")
     DB_PASSWORD = os.getenv("DB_PASSWORD", "")
+    DB_SSL_CA = os.getenv("DB_SSL_CA", "") 
     DEBUG = os.getenv("FLASK_DEBUG", "false").lower() == "true"
     TSHARK_PATH = os.getenv("TSHARK_PATH", r"D:\Degree\FYP\Wireshark\tshark.exe")
     PCAP_UPLOAD_FOLDER = os.path.join(os.path.dirname(os.path.dirname(__file__)), "pcap", "uploads")
