@@ -1,10 +1,16 @@
-﻿// Shared same-origin API helper. API errors remain visible to users and developers.
+﻿const API_BASE_URL =
+  window.location.hostname === "localhost" ||
+  window.location.hostname === "127.0.0.1"
+  ? "http://127.0.0.1:5000"
+  : "https://fyp-net-sentry-ai-ai-nids.vercel.app";
+
+// Shared same-origin API helper. API errors remain visible to users and developers.
 async function apiRequest(endpoint, options = {}) {
   const isFormData = options.body instanceof FormData;
   const headers = { ...(options.headers || {}) };
   // The browser must set the multipart boundary when uploading a PCAP file.
   if (!isFormData && !headers["Content-Type"]) headers["Content-Type"] = "application/json";
-  const response = await fetch(endpoint, { ...options, credentials: "include", headers });
+  const response = await fetch(`${API_BASE_URL}${endpoint}`, { ...options, credentials: "include", headers });
   const responseText = await response.text();
   let payload;
   try { payload = responseText ? JSON.parse(responseText) : null; } catch (_error) { throw new Error("The server returned an invalid response. Check the Flask terminal."); }
