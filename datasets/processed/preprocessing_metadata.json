@@ -1,0 +1,45 @@
+{
+  "source_files": [
+    "Tuesday-WorkingHours.pcap_ISCX.csv",
+    "Friday-WorkingHours-Afternoon-PortScan.pcap_ISCX.csv",
+    "Friday-WorkingHours-Afternoon-DDos.pcap_ISCX.csv"
+  ],
+  "source_hashes": {
+    "Tuesday-WorkingHours.pcap_ISCX.csv": "52b8692ae8c7d2ed04671fe2b98335693c0a92c7ab157d8c8b534d6523080851",
+    "Friday-WorkingHours-Afternoon-PortScan.pcap_ISCX.csv": "ca1824c51bfbb7b3c72290a11be04366ba8815878c6a1cc5c44cb1cee269e99b",
+    "Friday-WorkingHours-Afternoon-DDos.pcap_ISCX.csv": "6ff1580f5f81c0ae28a26f7631721018577f5f7c5e0feac28b795fcfe7b411ee"
+  },
+  "source_files_unchanged": true,
+  "original_rows": 958121,
+  "invalid_rows_removed": 669,
+  "final_rows": 957452,
+  "random_state": 42,
+  "test_fraction": 0.2,
+  "duplicate_policy": "Retained; exact duplicate identities are kept in one split only.",
+  "split_strategy": "Stratified by Label and grouped by exact cleaned-row identity.",
+  "class_counts_after_cleaning": {
+    "BENIGN": 656791,
+    "DDoS": 128025,
+    "FTP-Patator": 7935,
+    "PortScan": 158804,
+    "SSH-Patator": 5897
+  },
+  "train_rows": 766869,
+  "test_rows": 190583,
+  "train_class_distribution": {
+    "BENIGN": 526455,
+    "DDoS": 102422,
+    "FTP-Patator": 6561,
+    "PortScan": 126865,
+    "SSH-Patator": 4566
+  },
+  "test_class_distribution": {
+    "BENIGN": 130336,
+    "DDoS": 25603,
+    "FTP-Patator": 1374,
+    "PortScan": 31939,
+    "SSH-Patator": 1331
+  },
+  "exact_row_overlap": 0,
+  "model_trained": false
+}

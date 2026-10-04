@@ -1,0 +1,7 @@
+{
+  "BENIGN": 0,
+  "DDoS": 1,
+  "FTP-Patator": 2,
+  "PortScan": 3,
+  "SSH-Patator": 4
+}

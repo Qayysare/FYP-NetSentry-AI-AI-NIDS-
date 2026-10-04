@@ -31,3 +31,12 @@ Wireshark/
 
 # Local PCAP test directory
 pcap/
+
+# Keep datasets ignored, but allow small ML metadata needed in production
+!datasets/
+datasets/*
+!datasets/processed/
+datasets/processed/*
+!datasets/processed/class_mapping.json
+!datasets/processed/feature_schema.json
+!datasets/processed/preprocessing_metadata.json
